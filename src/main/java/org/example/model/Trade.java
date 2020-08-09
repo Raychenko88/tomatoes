@@ -23,6 +23,6 @@ public class Trade {
     private BigDecimal price;
     private Integer amount;
     private LocalDate time;
-    private String offer;
-    private String status;
+//    private String offer;
+//    private String status;
 }

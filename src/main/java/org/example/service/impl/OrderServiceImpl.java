@@ -94,6 +94,4 @@ public class OrderServiceImpl implements OrderService {
                 .comparing(Order::getPrice).reversed());
         return all;
     }
-
-
 }

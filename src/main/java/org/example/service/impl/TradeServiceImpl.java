@@ -1,10 +1,13 @@
 package org.example.service.impl;
 
 import org.example.dao.TradeDAO;
+import org.example.model.Order;
 import org.example.model.Trade;
 import org.example.service.TradeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
 
 @Service
 public class TradeServiceImpl implements TradeService {
