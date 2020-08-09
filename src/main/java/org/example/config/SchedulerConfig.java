@@ -28,9 +28,6 @@ public class SchedulerConfig {
 
     @Scheduled(fixedRate = 5000)
     public void repeater() {
-        // сравниваем ордеры если подходит продавец покупателю
-        // убираем у ордера продавца количество купленного (update)
-        // создаем и сохраняем трэйд
 
         for (Order buyer:orderService.getAllBuyersWithOpenStatus()) {
             for (Order seller : orderService.getAllSellersWithOpenStatus()) {
@@ -41,6 +38,9 @@ public class SchedulerConfig {
         }
     }
 
+    // сравниваем ордеры если подходит продавец покупателю
+    // убираем у ордера продавца количество купленного (update)
+    // создаем и сохраняем трэйд
     public void checkTrade(Order seller, Order buyer){
         Integer thisAmount;
         if (seller.getAmount() > buyer.getAmount()){
