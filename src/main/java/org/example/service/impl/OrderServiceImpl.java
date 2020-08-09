@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -80,10 +81,18 @@ public class OrderServiceImpl implements OrderService {
 
     public List<Order> sortedAllSellersWithOpenStatusByPrice(){
         // сортировка getAllSellersWithOpenStatus по убыванию
+        List<Order> all = getAllSellersWithOpenStatus();
+        getAllSellersWithOpenStatus().sort(Comparator
+                .comparing(Order::getPrice).reversed());
+       return all;
     }
 
     public List<Order> sortedAllBuyersWithOpenStatusByPrice(){
         // сортировка getAllBuyersWithOpenStatus по убыванию
+        List<Order> all = getAllBuyersWithOpenStatus();
+        getAllSellersWithOpenStatus().sort(Comparator
+                .comparing(Order::getPrice).reversed());
+        return all;
     }
 
 
