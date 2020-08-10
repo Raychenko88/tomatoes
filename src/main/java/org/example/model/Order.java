@@ -23,7 +23,7 @@ public class Order {
     private BigDecimal price;
     private Integer amount;
 //    private LocalDate time;
-    private String offer;
-    private String status;
+    private Offer offer;
+    private Status status;
 //    private Integer idSTrade;
 }
